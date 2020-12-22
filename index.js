@@ -2,6 +2,7 @@ global.ENVIRONMENT = (typeof process !== 'undefined') && (process.release.name =
 
 const fs = require('fs')
 const { generate } = require('libp2p/src/pnet')
+const { v4 } = require('uuid')
 const IPFS = require('ipfs')
 const P2PStack = require('./lib/p2p-stack')
 
@@ -35,7 +36,7 @@ const  WorkhubIPFS = async (config = {}, swarmKey) => {
     
     const addFile = async (file) => {
       console.log("Adding file")
-      const id = uuidv4()
+      const id = v4()
       const result = await node.add(file)
       return result.cid;
     }
