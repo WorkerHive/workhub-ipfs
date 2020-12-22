@@ -1,0 +1,15 @@
+{
+  "name": "workhub-ipfs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "repository": "git@github.com:WorkerHive/workhub-ipfs.git",
+  "author": "Ross Leitch <professional.balbatross@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ipfs": "^0.52.3"
+  },
+  "devDependencies": {
+    "wrtc": "^0.4.6"
+  }
+}
