@@ -1,4 +1,4 @@
-const ENVIRONMENT = (typeof process !== 'undefined') && (process.release.name === 'node') ? 'NODE' : 'BROWSER'
+const ENVIRONMENT = (typeof process !== 'undefined') && (process.release && process.release.name === 'node') ? 'NODE' : 'BROWSER'
 
 const MDNS = require('libp2p-mdns')
 if(ENVIRONMENT == "NODE") var TCP = require('libp2p-tcp')

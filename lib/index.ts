@@ -1,4 +1,4 @@
-const ENVIRONMENT = (typeof process !== 'undefined') && (process.release.name === 'node') ? 'NODE' : 'BROWSER'
+const ENVIRONMENT = (typeof process !== 'undefined') && (process.release && process.release.name === 'node') ? 'NODE' : 'BROWSER'
 
 if(ENVIRONMENT == "NODE"){
 
