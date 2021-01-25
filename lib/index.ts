@@ -40,6 +40,8 @@ interface IPFSInterface {
 
 export class  WorkhubFS {
     private key : Uint8Array = new Uint8Array(95);
+    public swarmKey?: string;
+
     public node?: IPFS.IPFS;
     private config: IPFSInterface;
 
@@ -47,16 +49,18 @@ export class  WorkhubFS {
         this.config = config;
         if(swarmKey){
           //  this.key =  .toString();
+          this.swarmKey = swarmKey
             this.key = decode(swarmKey)
         }
 
         if(ENVIRONMENT == "NODE" && !swarmKey){
             generate(this.key)
-            console.log('=> Swarm Key: ', encode(this.key))
+            this.swarmKey = encode(this.key)
+            console.info('=> Swarm Key: ', this.swarmKey)
         }
 
         this.init().then(() => {
-            console.log('=> IPFS Started')
+            console.debug('=> IPFS Started')
         });
     }
 
